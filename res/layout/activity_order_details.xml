@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".OrderDetailsActivity">
+
+    <View
+        android:id="@+id/top_background"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#82CAFF"
+        android:elevation="4dp"/>
+
+    <ImageView
+        android:id="@+id/back_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/arrow2"
+        android:tint="@color/black"
+        android:elevation="6dp"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Details"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:elevation="6dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_background"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView style="@style/DetailLabel" android:text="Order ID:"/>
+                <TextView android:id="@+id/tv_order_id" style="@style/DetailValue" android:text="1234567" />
+
+                <TextView style="@style/DetailLabel" android:text="Customer Name:"/>
+                <TextView android:id="@+id/tv_customer_name" style="@style/DetailValue" android:text="Ali" />
+
+                <TextView style="@style/DetailLabel" android:text="Order Date:"/>
+                <TextView android:id="@+id/tv_order_date" style="@style/DetailValue" android:text="20 June 2025 8:00:00" />
+
+                <TextView style="@style/DetailLabel" android:text="Collect Options:"/>
+                <TextView android:id="@+id/tv_collect_options" style="@style/DetailValue" android:text="Pickup" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TT H2304 Group Project"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1">
+
+                        <TableRow style="@style/DetailRow">
+                            <TextView style="@style/SettingLabel" android:text="Pages:"/>
+                            <TextView android:id="@+id/tv_pages" style="@style/SettingValue" android:text="89 pages"/>
+                        </TableRow>
+
+                        <TableRow style="@style/DetailRow">
+                            <TextView style="@style/SettingLabel" android:text="Copies:"/>
+                            <TextView android:id="@+id/tv_copies" style="@style/SettingValue" android:text="2"/>
+                        </TableRow>
+
+                        <TableRow style="@style/DetailRow">
+                            <TextView style="@style/SettingLabel" android:text="Orientation:"/>
+                            <TextView android:id="@+id/tv_orientation" style="@style/SettingValue" android:text="Portrait"/>
+                        </TableRow>
+
+                        <TableRow style="@style/DetailRow">
+                            <TextView style="@style/SettingLabel" android:text="Paper Size:"/>
+                            <TextView android:id="@+id/tv_paper_size" style="@style/SettingValue" android:text="A4"/>
+                        </TableRow>
+
+                        <TableRow style="@style/DetailRow">
+                            <TextView style="@style/SettingLabel" android:text="Color:"/>
+                            <TextView android:id="@+id/tv_color" style="@style/SettingValue" android:text="Black &amp; White"/>
+                        </TableRow>
+
+                        <TableRow style="@style/DetailRow">
+                            <TextView style="@style/SettingLabel" android:text="Note:"/>
+                            <TextView android:id="@+id/tv_note" style="@style/SettingValue" android:text="No Note"/>
+                        </TableRow>
+                    </TableLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/finish_printed_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FINISH PRINTED"
+                android:textColor="@color/white"
+                android:backgroundTint="#82CAFF"
+                android:paddingVertical="12dp"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/back_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:textColor="@color/black"
+                android:backgroundTint="@android:color/white"
+                android:paddingVertical="12dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
